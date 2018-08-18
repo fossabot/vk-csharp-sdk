@@ -2,6 +2,9 @@
 {
     // Ссылка: https://vk.com/dev/account
 
+    /// <summary>
+    /// Названия методов модуля для работы с аккаунтом.
+    /// </summary>
     public static class AccountMethods
     {
         /// <summary>
@@ -48,5 +51,7 @@
         /// Возвращает информацию о текущем профиле.
         /// </summary>
         public static string GetProfileInfo = "getProfileInfo";
+
+		// TODO: Добавить остальные методы.
     }
 }
