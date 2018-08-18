@@ -56,8 +56,8 @@ namespace Vk.CSharp.Sdk.Global.Enums
         /// <summary>
         /// Добавление ссылки на приложение в меню слева.
         /// </summary>
-        [FieldValue("link_cotrol")]
-        LinkCotnrol = 256,
+        [FieldValue("link_control")]
+        LinkControl = 256,
 
         /// <summary>
         /// Доступ к статусу пользователя.
@@ -142,7 +142,7 @@ namespace Vk.CSharp.Sdk.Global.Enums
             | Video
             | Stories
             | Pages
-            | LinkCotnrol
+            | LinkControl
             | Status
             | Notes
             | Messages
