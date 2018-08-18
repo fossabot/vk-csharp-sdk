@@ -15,13 +15,22 @@ namespace Vk.CSharp.Sdk.Internal.Extensions
                .Description ?? string.Empty;
         }
 
-        public static string GetValue(this Enum value)
+        public static object GetObjectValue(this Enum value)
         {
             return value
-               .GetType()
-               .GetField(value.ToString())
-               .GetCustomAttribute<FieldValueAttribute>()?
-               .Value ?? string.Empty;
+                .GetType()
+                .GetField(value.ToString())
+                .GetCustomAttribute<FieldValueAttribute>()?
+                .Value;
+        }
+
+        public static string GetStringValue(this Enum value)
+        {
+            return value
+                .GetType()
+                .GetField(value.ToString())
+                .GetCustomAttribute<FieldValueAttribute>()?
+                .Value as string ?? string.Empty;
         }
     }
 }

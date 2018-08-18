@@ -23,7 +23,7 @@ namespace Vk.CSharp.Sdk.Internal
         {
             Environment = new VkApiEnvironment();
 
-            Environment.Version = VkApiVersion.V580.GetValue();
+            Environment.Version = VkApiVersion.V580.GetStringValue();
         }
     }
 }
