@@ -29,6 +29,16 @@ namespace Vk.CSharp.Sdk.App.Source
                     .AccessToken
             );
 
+            Console.WriteLine(
+                ReferenceEquals(VkApiProvider.GetAccount(), VkApiProvider.GetVkApi().GetAccount())
+            );
+
+            var account = VkApiProvider.GetAccount();
+
+            Console.WriteLine(
+                ReferenceEquals(VkApiProvider.GetAccount(), account)
+            );
+
             Console.ReadKey();
         }
     }

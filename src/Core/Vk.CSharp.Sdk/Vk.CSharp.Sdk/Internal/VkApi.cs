@@ -1,21 +1,29 @@
 ﻿using Vk.CSharp.Sdk.External;
+using Vk.CSharp.Sdk.External.Modules;
 using Vk.CSharp.Sdk.Global.Models;
-using Vk.CSharp.Sdk.Internal.Extensions;
 
 namespace Vk.CSharp.Sdk.Internal
 {
-    internal class VkApi : IVkApi
+    internal class VkApi : Core, IVkApi
     {
-        protected Environment Environment { get; set; }
-
-        public VkApi()
+        public IAccount GetAccount()
         {
-            InitEnvironment();
+            return VkApiProvider.GetAccount();
         }
 
-        public Environment GetEnvironment()
+        public IAds GetAds()
         {
-            return Environment;
+            return VkApiProvider.GetAds();
+        }
+
+        public IMessages GetMessages()
+        {
+            return VkApiProvider.GetMessages();
+        }
+
+        public IWall GetWall()
+        {
+            return VkApiProvider.GetWall();
         }
 
         public AuthorizationResult Authorize(AuthorizationData data)
@@ -27,12 +35,6 @@ namespace Vk.CSharp.Sdk.Internal
             }
 
             return CreateFailureAuthorizationResult();
-        }
-
-        private void InitEnvironment()
-        {
-            Environment = new Environment();
-            Environment.Version = Core.CurrentVersion.GetStringValue();
         }
 
         private AuthorizationResult CreateSuccessAuthorizationResult() =>
