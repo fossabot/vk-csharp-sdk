@@ -1,4 +1,4 @@
-﻿namespace Vk.CSharp.Sdk.External.Models
+﻿namespace Vk.CSharp.Sdk.Global.Models
 {
     /// <summary>
     /// Результат авторизации.

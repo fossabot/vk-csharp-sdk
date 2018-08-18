@@ -2,6 +2,8 @@
 
 namespace Vk.CSharp.Sdk.Internal.Enums
 {
+    // Ссылка: https://vk.com/dev/errors
+
     internal enum Error
     {
         [FieldDescription("Произошла неизвестная ошибка.")]

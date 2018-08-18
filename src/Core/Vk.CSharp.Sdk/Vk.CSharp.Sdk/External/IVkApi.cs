@@ -1,4 +1,4 @@
-﻿using Vk.CSharp.Sdk.External.Models;
+﻿using Vk.CSharp.Sdk.Global.Models;
 
 namespace Vk.CSharp.Sdk.External
 {

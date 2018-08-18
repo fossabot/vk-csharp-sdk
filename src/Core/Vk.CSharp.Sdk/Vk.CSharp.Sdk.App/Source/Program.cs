@@ -1,6 +1,6 @@
 ﻿using System;
 using Vk.CSharp.Sdk.External;
-using Vk.CSharp.Sdk.External.Models;
+using Vk.CSharp.Sdk.Global.Models;
 
 namespace Vk.CSharp.Sdk.App.Source
 {

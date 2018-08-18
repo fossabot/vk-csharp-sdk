@@ -1,4 +1,4 @@
-﻿namespace Vk.CSharp.Sdk.External.Models
+﻿namespace Vk.CSharp.Sdk.Global.Models
 {
     /// <summary>
     /// Данные для атворизации.
@@ -14,6 +14,11 @@
         /// Пароль.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Идентификатор приложения.
+        /// </summary>
+        public long ApplicationId { get; set; }
 
         /// <summary>
         /// Ключ доступа.

@@ -2,6 +2,8 @@
 
 namespace Vk.CSharp.Sdk.Internal.Enums
 {
+    // Ссылка: https://vk.com/dev/versions
+
     internal enum Version
     {
         [FieldValue("5.80")]
