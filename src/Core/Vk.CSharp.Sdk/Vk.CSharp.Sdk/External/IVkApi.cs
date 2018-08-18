@@ -1,7 +1,16 @@
-﻿namespace Vk.CSharp.Sdk.External
+﻿using Vk.CSharp.Sdk.External.Models;
+
+namespace Vk.CSharp.Sdk.External
 {
+    /// <summary>
+    /// API ВКонтакте.
+    /// </summary>
     public interface IVkApi
     {
-        int GetRandomNumber();
+        /// <summary>
+        /// Возвращает окружение.
+        /// </summary>
+        /// <returns>Окружение.</returns>
+        VkApiEnvironment GetEnvironment();
     }
 }

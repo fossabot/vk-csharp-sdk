@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="External\Models\" />
     <Folder Include="External\Enums\" />
     <Folder Include="Internal\Models\" />
   </ItemGroup>

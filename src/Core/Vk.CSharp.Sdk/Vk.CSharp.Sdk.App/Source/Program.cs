@@ -10,8 +10,10 @@ namespace Vk.CSharp.Sdk.App.Source
             Console.WriteLine(
                 VkApiProvider
                     .GetVkApi()
-                    .GetRandomNumber()
+                    .GetEnvironment()
+                    .Version
             );
+
 
             Console.ReadKey();
         }
