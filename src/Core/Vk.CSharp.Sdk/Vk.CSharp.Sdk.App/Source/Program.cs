@@ -39,6 +39,8 @@ namespace Vk.CSharp.Sdk.App.Source
                 ReferenceEquals(VkApiProvider.GetAccount(), account)
             );
 
+            Console.WriteLine(account.GetEnvironment().AccessToken);
+
             Console.ReadKey();
         }
     }

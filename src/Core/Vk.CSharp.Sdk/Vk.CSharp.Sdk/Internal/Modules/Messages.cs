@@ -2,5 +2,5 @@
 
 namespace Vk.CSharp.Sdk.Internal.Modules
 {
-    internal class Messages : Core, IMessages { }
+    internal class Messages : EnvironmentProvider, IMessages { }
 }

@@ -4,7 +4,7 @@ using Vk.CSharp.Sdk.Global.Models;
 
 namespace Vk.CSharp.Sdk.Internal
 {
-    internal class VkApi : Core, IVkApi
+    internal class VkApi : EnvironmentProvider, IVkApi
     {
         public IAccount GetAccount()
         {
@@ -30,7 +30,8 @@ namespace Vk.CSharp.Sdk.Internal
         {
             if (!string.IsNullOrEmpty(data.AccessToken))
             {
-                Environment.AccessToken = data.AccessToken;
+                Core.SetAccessToken(data.AccessToken);
+
                 return CreateSuccessAuthorizationResult();
             }
 

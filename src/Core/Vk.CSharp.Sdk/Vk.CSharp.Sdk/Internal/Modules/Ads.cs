@@ -2,5 +2,5 @@
 
 namespace Vk.CSharp.Sdk.Internal.Modules
 {
-    internal class Ads : Core, IAds { }
+    internal class Ads : EnvironmentProvider, IAds { }
 }

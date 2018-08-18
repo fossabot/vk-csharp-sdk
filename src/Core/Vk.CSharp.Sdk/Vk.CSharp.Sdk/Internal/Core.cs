@@ -1,32 +1,40 @@
-﻿using Vk.CSharp.Sdk.External;
-using Vk.CSharp.Sdk.Global.Models;
-using Vk.CSharp.Sdk.Internal.Enums;
+﻿using System;
 using Vk.CSharp.Sdk.Internal.Extensions;
+using Environment = Vk.CSharp.Sdk.Global.Models.Environment;
+using Version = Vk.CSharp.Sdk.Internal.Enums.Version;
 
 namespace Vk.CSharp.Sdk.Internal
 {
-    internal abstract class Core : IEnvironment
+    internal static class Core
     {
-        protected Environment Environment { get; set; }
-
         /// <summary>
         /// Текущая версия API ВКонтакте.
         /// </summary>
-        protected static Version CurrentVersion => Version.V580;
+        public static Version CurrentVersion => Version.V580;
 
-        protected Core()
-        {
-            InitEnvironment();
-        }
+        /// <summary>
+        /// Окружение.
+        /// </summary>
+        public static Environment Environment => LazyEnvironment.Value;
 
-        public Environment GetEnvironment()
+        /// <summary>
+        /// Возвращает окружение.
+        /// </summary>
+        /// <returns>Окружение.</returns>
+        public static Environment GetEnvironment()
         {
             return Environment;
         }
 
-        private void InitEnvironment()
+        public static void SetAccessToken(string accessToken)
+            => Environment.AccessToken = accessToken;
+
+        private static readonly Lazy<Environment> LazyEnvironment =
+            new Lazy<Environment>(() => CreateEnvironment());
+
+        private static Environment CreateEnvironment()
         {
-            Environment = new Environment
+            return new Environment
             {
                 Version = CurrentVersion.GetStringValue()
             };

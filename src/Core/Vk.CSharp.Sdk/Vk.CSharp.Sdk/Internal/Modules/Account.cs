@@ -2,7 +2,7 @@
 
 namespace Vk.CSharp.Sdk.Internal.Modules
 {
-    internal class Account : Core, IAccount
+    internal class Account : EnvironmentProvider, IAccount
     {
         public void GetInfo() { }
 

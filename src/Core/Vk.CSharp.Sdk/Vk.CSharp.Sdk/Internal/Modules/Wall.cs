@@ -2,5 +2,5 @@
 
 namespace Vk.CSharp.Sdk.Internal.Modules
 {
-    internal class Wall : Core, IWall { }
+    internal class Wall : EnvironmentProvider, IWall { }
 }
