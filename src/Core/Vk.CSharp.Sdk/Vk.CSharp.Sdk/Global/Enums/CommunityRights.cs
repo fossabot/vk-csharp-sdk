@@ -9,7 +9,7 @@ namespace Vk.CSharp.Sdk.Global.Enums
     /// Права доступа для токена сообщества.
     /// </summary>
     [Flags]
-    public enum CommunitySettings
+    public enum CommunityRights
     {
         /// <summary>
         /// Доступ к историям.

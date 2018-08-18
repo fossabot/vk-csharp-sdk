@@ -1,4 +1,6 @@
-﻿namespace Vk.CSharp.Sdk.Global.Models
+﻿using Vk.CSharp.Sdk.Global.Enums;
+
+namespace Vk.CSharp.Sdk.Global.Models
 {
     /// <summary>
     /// Данные для атворизации.
@@ -19,6 +21,12 @@
         /// Идентификатор приложения.
         /// </summary>
         public long ApplicationId { get; set; }
+
+        /// <summary>
+        /// Права доступа.
+        /// По умолчанию: <see cref="UserRights.All" />.
+        /// </summary>
+        public UserRights Rights { get; set; } = UserRights.All;
 
         /// <summary>
         /// Ключ доступа.

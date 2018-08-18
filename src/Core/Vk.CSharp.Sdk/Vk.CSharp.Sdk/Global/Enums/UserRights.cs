@@ -9,7 +9,7 @@ namespace Vk.CSharp.Sdk.Global.Enums
     /// Права доступа для токена пользователя.
     /// </summary>
     [Flags]
-    public enum UserSettings
+    public enum UserRights
     {
         /// <summary>
         /// Пользователь разрешил отправлять ему уведомления.
