@@ -4,6 +4,9 @@ namespace Vk.CSharp.Sdk.Internal
 {
     internal static class Core
     {
-        public static Version Version => Version.V580;
+        /// <summary>
+        /// Текущая версия API ВКонтакте.
+        /// </summary>
+        public static Version CurrentVersion => Version.V580;
     }
 }

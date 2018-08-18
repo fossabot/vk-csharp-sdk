@@ -23,16 +23,22 @@ namespace Vk.CSharp.Sdk.Internal
             if (!string.IsNullOrEmpty(data.AccessToken))
             {
                 Environment.AccessToken = data.AccessToken;
+                return CreateSuccessAuthorizationResult();
             }
 
-            return new AuthorizationResult();
+            return CreateFailureAuthorizationResult();
         }
 
         private void InitEnvironment()
         {
             Environment = new Environment();
-
-            Environment.Version = Core.Version.GetStringValue();
+            Environment.Version = Core.CurrentVersion.GetStringValue();
         }
+
+        private AuthorizationResult CreateSuccessAuthorizationResult() =>
+            new AuthorizationResult { Success = true };
+
+        private AuthorizationResult CreateFailureAuthorizationResult() =>
+            new AuthorizationResult { Success = false };
     }
 }
