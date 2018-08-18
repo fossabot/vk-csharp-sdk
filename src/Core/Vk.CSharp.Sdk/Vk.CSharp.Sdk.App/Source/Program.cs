@@ -14,7 +14,6 @@ namespace Vk.CSharp.Sdk.App.Source
                     .Version
             );
 
-
             Console.ReadKey();
         }
     }
