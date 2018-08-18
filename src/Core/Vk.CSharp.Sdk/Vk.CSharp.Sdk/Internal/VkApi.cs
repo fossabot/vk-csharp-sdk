@@ -1,9 +1,9 @@
 ﻿using System;
 using Vk.CSharp.Sdk.External;
 
-namespace Vk.CSharp.Sdk.Core
+namespace Vk.CSharp.Sdk.Internal
 {
-    internal class VkApi : External.IVkApi
+    internal class VkApi : IVkApi
     {
         protected Random Random => new Random();
 
