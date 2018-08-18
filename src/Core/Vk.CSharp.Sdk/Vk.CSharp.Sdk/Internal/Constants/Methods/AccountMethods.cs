@@ -51,7 +51,7 @@
         /// Возвращает информацию о текущем профиле.
         /// </summary>
         public static string GetProfileInfo = "getProfileInfo";
-
-		// TODO: Добавить остальные методы.
+        
+        // TODO: Добавить остальные методы.
     }
 }
