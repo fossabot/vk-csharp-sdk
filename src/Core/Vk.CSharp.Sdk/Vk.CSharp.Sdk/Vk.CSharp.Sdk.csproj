@@ -5,9 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Internal\Constants\Account.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Internal\Models\" />
     <Folder Include="Internal\Exceptions\" />
     <Folder Include="Internal\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Internal\Constants\Methods\AccountMethods.cs" />
   </ItemGroup>
 
 </Project>

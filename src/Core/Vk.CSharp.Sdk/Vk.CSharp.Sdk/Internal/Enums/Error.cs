@@ -73,7 +73,7 @@ namespace Vk.CSharp.Sdk.Internal.Enums
         ApplicationAccessTokenIsInvalid = 28,
 
         [FieldDescription("Достигнут количественный лимит на вызов метода.")]
-        RateLimitReached = 29,
+        MethodInvocationLimitReached = 29,
 
         [FieldDescription("Один из необходимых параметров был не передан или неверен.")]
         OneOfRequiredParametersWasNotTransmittedOrIncorrect = 100,
