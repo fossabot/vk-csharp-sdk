@@ -1,17 +1,32 @@
 ﻿using System;
 using Vk.CSharp.Sdk.External;
+using Vk.CSharp.Sdk.External.Models;
 
 namespace Vk.CSharp.Sdk.App.Source
 {
     internal class Program
     {
+        private static string AccessToken =>
+            "access_token";
+
         private static void Main()
         {
+            VkApiProvider
+                .GetVkApi()
+                .Authorize(new AuthorizationData(AccessToken));
+
             Console.WriteLine(
                 VkApiProvider
                     .GetVkApi()
                     .GetEnvironment()
                     .Version
+            );
+
+            Console.WriteLine(
+                VkApiProvider
+                    .GetVkApi()
+                    .GetEnvironment()
+                    .AccessToken
             );
 
             Console.ReadKey();

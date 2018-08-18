@@ -2,7 +2,7 @@
 
 namespace Vk.CSharp.Sdk.Internal.Enums
 {
-    internal enum VkApiError
+    internal enum Error
     {
         [FieldDescription("Произошла неизвестная ошибка.")]
         Unknown = 1,

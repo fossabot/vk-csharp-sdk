@@ -2,7 +2,7 @@
 
 namespace Vk.CSharp.Sdk.Internal.Enums
 {
-    internal enum VkApiVersion
+    internal enum Version
     {
         [FieldValue("5.80")]
         V580

@@ -3,7 +3,7 @@
     /// <summary>
     /// Окружение.
     /// </summary>
-    public class VkApiEnvironment
+    public class Environment
     {
         /// <summary>
         /// Версия.

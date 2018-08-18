@@ -6,7 +6,9 @@
 
   <ItemGroup>
     <Folder Include="External\Enums\" />
+    <Folder Include="Internal\Constants\" />
     <Folder Include="Internal\Models\" />
+    <Folder Include="Internal\Services\" />
   </ItemGroup>
 
 </Project>

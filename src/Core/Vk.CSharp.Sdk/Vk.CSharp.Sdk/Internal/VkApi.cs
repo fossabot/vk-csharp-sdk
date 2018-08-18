@@ -1,29 +1,38 @@
 ﻿using Vk.CSharp.Sdk.External;
 using Vk.CSharp.Sdk.External.Models;
-using Vk.CSharp.Sdk.Internal.Enums;
 using Vk.CSharp.Sdk.Internal.Extensions;
 
 namespace Vk.CSharp.Sdk.Internal
 {
     internal class VkApi : IVkApi
     {
-        protected VkApiEnvironment Environment { get; set; }
+        protected Environment Environment { get; set; }
 
         public VkApi()
         {
             InitEnvironment();
         }
 
-        public VkApiEnvironment GetEnvironment()
+        public Environment GetEnvironment()
         {
             return Environment;
         }
 
+        public AuthorizationResult Authorize(AuthorizationData data)
+        {
+            if (!string.IsNullOrEmpty(data.AccessToken))
+            {
+                Environment.AccessToken = data.AccessToken;
+            }
+
+            return new AuthorizationResult();
+        }
+
         private void InitEnvironment()
         {
-            Environment = new VkApiEnvironment();
+            Environment = new Environment();
 
-            Environment.Version = VkApiVersion.V580.GetStringValue();
+            Environment.Version = Core.Version.GetStringValue();
         }
     }
 }
