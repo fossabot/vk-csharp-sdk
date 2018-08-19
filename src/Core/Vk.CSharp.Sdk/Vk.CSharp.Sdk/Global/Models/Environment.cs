@@ -17,6 +17,9 @@ namespace Vk.CSharp.Sdk.Global.Models
         /// </summary>
         public string AccessToken { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Делает копию объекта (клонирует).
+        /// </summary>
         public object Clone()
         {
             return new Environment

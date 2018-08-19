@@ -6,7 +6,7 @@ namespace Vk.CSharp.Sdk.Tests.Source
     public class EnumsTests
     {
         [Fact]
-        public void UserRights_All()
+        public void UserRights_All_Test()
         {
             var expected =
                 + ConvertToInt(UserRights.Notify)
@@ -35,7 +35,7 @@ namespace Vk.CSharp.Sdk.Tests.Source
         }
 
         [Fact]
-        public void CommunityRights_All()
+        public void CommunityRights_All_Test()
         {
             var expected =
                 + ConvertToInt(CommunityRights.AppWidget)

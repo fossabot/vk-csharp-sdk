@@ -2,6 +2,7 @@
 using Vk.CSharp.Sdk.Internal;
 using Vk.CSharp.Sdk.External.Modules;
 using Vk.CSharp.Sdk.Internal.Modules;
+using Environment = Vk.CSharp.Sdk.Global.Models.Environment;
 
 namespace Vk.CSharp.Sdk.External
 {
@@ -27,6 +28,12 @@ namespace Vk.CSharp.Sdk.External
 
         private static readonly Lazy<IEnvironmentProvider> LazyEnvironmentProvider =
             new Lazy<IEnvironmentProvider>(() => new EnvironmentProvider());
+
+        /// <summary>
+        /// Возвращает окружение.
+        /// </summary>
+        /// <returns>Окружение.</returns>
+        public static Environment GetEnvironment() => GetEnvironmentProvider().GetEnvironment();
 
         /// <summary>
         /// Возвращает интерфейс провайдера окружения.
