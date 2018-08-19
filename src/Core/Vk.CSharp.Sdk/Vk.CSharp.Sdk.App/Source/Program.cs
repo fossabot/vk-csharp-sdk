@@ -54,6 +54,8 @@ namespace Vk.CSharp.Sdk.App.Source
                     .AccessToken
             );
 
+            VkApiProvider.Deauthorize();
+
             Console.ReadKey();
         }
     }

@@ -34,5 +34,10 @@ namespace Vk.CSharp.Sdk.External
         /// <param name="data">Данные для авторизации.</param>
         /// <returns>Результат авторизации.</returns>
         AuthorizationResult Authorize(AuthorizationData data);
+
+        /// <summary>
+        /// Выполняет деавторизацию (будет очищено окружение).
+        /// </summary>
+        void Deauthorize();
     }
 }

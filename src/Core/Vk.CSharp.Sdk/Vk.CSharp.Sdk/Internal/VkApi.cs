@@ -28,6 +28,8 @@ namespace Vk.CSharp.Sdk.Internal
 
         public AuthorizationResult Authorize(AuthorizationData data)
         {
+            Deauthorize();
+
             if (!string.IsNullOrEmpty(data.AccessToken))
             {
                 Core.SaveAccessTokenToEnvironment(data.AccessToken);
@@ -36,6 +38,11 @@ namespace Vk.CSharp.Sdk.Internal
             }
 
             return CreateFailureAuthorizationResult();
+        }
+
+        public void Deauthorize()
+        {
+            Core.ClearEnvironment();
         }
 
         private AuthorizationResult CreateSuccessAuthorizationResult() =>

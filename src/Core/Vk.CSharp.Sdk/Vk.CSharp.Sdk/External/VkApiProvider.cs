@@ -1,6 +1,7 @@
 ﻿using System;
 using Vk.CSharp.Sdk.Internal;
 using Vk.CSharp.Sdk.External.Modules;
+using Vk.CSharp.Sdk.Global.Models;
 using Vk.CSharp.Sdk.Internal.Modules;
 using Environment = Vk.CSharp.Sdk.Global.Models.Environment;
 
@@ -28,6 +29,18 @@ namespace Vk.CSharp.Sdk.External
 
         private static readonly Lazy<IEnvironmentProvider> LazyEnvironmentProvider =
             new Lazy<IEnvironmentProvider>(() => new EnvironmentProvider());
+
+        /// <summary>
+        /// Выполняет авторизацию.
+        /// </summary>
+        /// <param name="data">Данные для авторизации.</param>
+        /// <returns>Результат авторизации.</returns>
+        public static AuthorizationResult Authorize(AuthorizationData data) => GetVkApi().Authorize(data);
+
+        /// <summary>
+        /// Выполняет деавторизацию (будет очищено окружение).
+        /// </summary>
+        public static void Deauthorize() => GetVkApi().Deauthorize();
 
         /// <summary>
         /// Возвращает окружение.

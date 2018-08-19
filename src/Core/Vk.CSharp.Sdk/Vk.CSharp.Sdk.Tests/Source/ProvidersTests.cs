@@ -1,4 +1,5 @@
 ﻿using Vk.CSharp.Sdk.External;
+using Vk.CSharp.Sdk.Global.Exceptions;
 using Vk.CSharp.Sdk.Global.Models;
 using Xunit;
 
@@ -49,6 +50,23 @@ namespace Vk.CSharp.Sdk.Tests.Source
                 .GetEnvironment();
 
             Assert.Equal(AccessToken, environment.AccessToken);
+        }
+
+        [Fact]
+        public void EnvironmentProvider_Deauthorization_Test()
+        {
+            VkApiProvider
+                .GetVkApi()
+                .Authorize(new AuthorizationData(AccessToken));
+
+            VkApiProvider
+                .GetAccount()
+                .GetInfo();
+
+            VkApiProvider.Deauthorize();
+
+            // Возникнет исключение, так как была произведена деавторизация (очищено окружение).
+            Assert.Throws<InvalidAccessTokenException>(() => VkApiProvider.GetAccount().GetInfo());
         }
     }
 }

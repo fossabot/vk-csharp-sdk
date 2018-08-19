@@ -43,5 +43,14 @@ namespace Vk.CSharp.Sdk.Internal
                 Version = CurrentVersion.GetStringValue()
             };
         }
+
+        /// <summary>
+        /// Очищает окружение.
+        /// </summary>
+        public static void ClearEnvironment()
+        {
+            Environment.AccessToken = string.Empty;
+            Environment.Version = CurrentVersion.GetStringValue();
+        }
     }
 }
