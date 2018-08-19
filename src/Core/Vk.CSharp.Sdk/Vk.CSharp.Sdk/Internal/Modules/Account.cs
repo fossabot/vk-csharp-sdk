@@ -4,8 +4,14 @@ namespace Vk.CSharp.Sdk.Internal.Modules
 {
     internal class Account : EnvironmentProvider, IAccount
     {
-        public void GetInfo() { }
+        public void GetInfo()
+        {
+            ValidateEnvironment();
+        }
 
-        public void GetProfileInfo() { }
+        public void GetProfileInfo()
+        {
+            ValidateEnvironment();
+        }
     }
 }
