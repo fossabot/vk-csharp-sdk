@@ -1,62 +1,43 @@
 ﻿using System;
+using System.IO;
+using Newtonsoft.Json;
 using Vk.CSharp.Sdk.External;
 using Vk.CSharp.Sdk.Global.Models;
 
 namespace Vk.CSharp.Sdk.App.Source
 {
+    internal class Data
+    {
+        [JsonProperty("access_token")]
+        public string AccessToken { get; set; }
+    }
+
     internal class Program
     {
-        private static string AccessToken =>
-            "access_token";
+        protected static Data Data => GetData(GetJson());
 
         private static void Main()
         {
-            VkApiProvider
-                .GetVkApi()
-                .Authorize(new AuthorizationData(AccessToken));
+            // На данный момент авторизация производится по уже полученному ключу доступа.
+            // Полученный ключ доступа необходимо вставить в файл "access_token.json".
+            VkApiProvider.Authorize(new AuthorizationData(Data.AccessToken));
 
             Console.WriteLine(
                 VkApiProvider
-                    .GetVkApi()
-                    .GetEnvironment()
-                    .Version
-            );
-
-            Console.WriteLine(
-                VkApiProvider
-                    .GetVkApi()
                     .GetEnvironment()
                     .AccessToken
             );
-
-            Console.WriteLine(
-                ReferenceEquals(VkApiProvider.GetAccount(), VkApiProvider.GetVkApi().GetAccount())
-            );
-
-            var account = VkApiProvider.GetAccount();
-
-            Console.WriteLine(
-                ReferenceEquals(VkApiProvider.GetAccount(), account)
-            );
-
-            Console.WriteLine(account.GetEnvironment().AccessToken);
-
-            var environment = VkApiProvider
-                .GetEnvironmentProvider()
-                .GetEnvironment();
-
-            environment.AccessToken = "new_access_token";
-
-            Console.WriteLine(
-                VkApiProvider
-                    .GetEnvironmentProvider()
-                    .GetEnvironment()
-                    .AccessToken
-            );
-
-            VkApiProvider.Deauthorize();
 
             Console.ReadKey();
         }
+
+        private static Data GetData(string json) =>
+            JsonConvert.DeserializeObject<Data>(json);
+
+        private static string GetJson() =>
+            File.ReadAllText(GetCurrentProjectFullPath() + @"/Data/access_token.json");
+
+        private static string GetCurrentProjectFullPath() =>
+            Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())));
     }
 }
