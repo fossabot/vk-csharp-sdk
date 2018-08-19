@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Source\" />
+    <ProjectReference Include="..\Vk.CSharp.Sdk\Vk.CSharp.Sdk.csproj" />
   </ItemGroup>
 
 </Project>
