@@ -4,7 +4,7 @@ using Vk.CSharp.Sdk.Internal.Attributes.Fields;
 
 namespace Vk.CSharp.Sdk.Internal.Extensions
 {
-    public static class EnumExtensions
+    internal static class EnumExtensions
     {
         public static string GetDescription(this Enum value)
         {
