@@ -1,7 +1,5 @@
 ﻿https://oauth.vk.com/authorize
 
-Основные параметры запроса:
-
 	client_id = 6665781
 	display = mobile
 	redirect_uri = https://oauth.vk.com/blank.html
