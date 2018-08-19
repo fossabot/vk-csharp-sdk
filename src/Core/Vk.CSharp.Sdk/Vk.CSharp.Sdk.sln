@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vk.CSharp.Sdk", "Vk.CSharp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vk.CSharp.Sdk.App", "Vk.CSharp.Sdk.App\Vk.CSharp.Sdk.App.csproj", "{AE6DBD15-8096-499D-BB80-8D58C4C5422B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vk.CSharp.Sdk.Tests", "Vk.CSharp.Sdk.Tests\Vk.CSharp.Sdk.Tests.csproj", "{42B6B6B9-C281-45AD-8831-C8E4CE96C458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vk.CSharp.Sdk.Tests", "Vk.CSharp.Sdk.Tests\Vk.CSharp.Sdk.Tests.csproj", "{42B6B6B9-C281-45AD-8831-C8E4CE96C458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rest", "Rest", "{5D6970B2-5B1A-4D56-8EF4-636BF9A45393}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
