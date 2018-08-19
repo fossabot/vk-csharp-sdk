@@ -38,7 +38,7 @@ namespace Vk.CSharp.Sdk.External
         /// <summary>
         /// Возвращает интерфейс провайдера окружения.
         /// </summary>
-        /// <returns>Интерфейс провадйерп окружения.</returns>
+        /// <returns>Интерфейс провайдера окружения.</returns>
         public static IEnvironmentProvider GetEnvironmentProvider() => LazyEnvironmentProvider.Value;
 
         /// <summary>
