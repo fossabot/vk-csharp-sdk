@@ -3,5 +3,5 @@
     /// <summary>
     /// Модуль для работы с рекламным кабинетом.
     /// </summary>
-    public interface IAds : IEnvironment { }
+    public interface IAds : IEnvironmentProvider { }
 }

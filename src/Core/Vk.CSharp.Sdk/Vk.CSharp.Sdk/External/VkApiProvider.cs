@@ -25,6 +25,15 @@ namespace Vk.CSharp.Sdk.External
         private static readonly Lazy<IWall> LazyWall =
             new Lazy<IWall>(() => new Wall());
 
+        private static readonly Lazy<IEnvironmentProvider> LazyEnvironmentProvider =
+            new Lazy<IEnvironmentProvider>(() => new EnvironmentProvider());
+
+        /// <summary>
+        /// Возвращает интерфейс провайдера окружения.
+        /// </summary>
+        /// <returns>Интерфейс провадйерп окружения.</returns>
+        public static IEnvironmentProvider GetEnvironmentProvider() => LazyEnvironmentProvider.Value;
+
         /// <summary>
         /// Возвращает интерфейс для работы с API ВКонтакте.
         /// </summary>

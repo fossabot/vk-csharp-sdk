@@ -23,14 +23,18 @@ namespace Vk.CSharp.Sdk.Internal
         /// <returns>Окружение.</returns>
         public static Environment GetEnvironment()
         {
-            return Environment;
+            return LazyEnvironment.Value;
         }
 
-        public static void SetAccessToken(string accessToken)
+        /// <summary>
+        /// Сохраняет ключ доступа в окружение.
+        /// </summary>
+        /// <param name="accessToken">Ключ доступа.</param>
+        public static void SaveAccessTokenToEnvironment(string accessToken)
             => Environment.AccessToken = accessToken;
 
         private static readonly Lazy<Environment> LazyEnvironment =
-            new Lazy<Environment>(() => CreateEnvironment());
+            new Lazy<Environment>(CreateEnvironment);
 
         private static Environment CreateEnvironment()
         {

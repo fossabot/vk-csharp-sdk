@@ -3,11 +3,13 @@ using Vk.CSharp.Sdk.Global.Models;
 
 namespace Vk.CSharp.Sdk.Internal
 {
-    internal class EnvironmentProvider : IEnvironment
+    internal class EnvironmentProvider : IEnvironmentProvider
     {
         public Environment GetEnvironment()
         {
-            return Core.GetEnvironment();
+            return Core
+                .GetEnvironment()
+                .Clone() as Environment;
         }
     }
 }

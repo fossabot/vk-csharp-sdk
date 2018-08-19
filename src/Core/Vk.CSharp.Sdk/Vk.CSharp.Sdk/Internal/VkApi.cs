@@ -30,7 +30,7 @@ namespace Vk.CSharp.Sdk.Internal
         {
             if (!string.IsNullOrEmpty(data.AccessToken))
             {
-                Core.SetAccessToken(data.AccessToken);
+                Core.SaveAccessTokenToEnvironment(data.AccessToken);
 
                 return CreateSuccessAuthorizationResult();
             }

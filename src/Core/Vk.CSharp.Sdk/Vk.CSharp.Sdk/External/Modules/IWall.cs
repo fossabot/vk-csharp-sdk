@@ -3,5 +3,5 @@
     /// <summary>
     /// Модуль для работы с записями на стене.
     /// </summary>
-    public interface IWall : IEnvironment { }
+    public interface IWall : IEnvironmentProvider { }
 }

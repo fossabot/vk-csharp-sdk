@@ -3,7 +3,7 @@
     /// <summary>
     /// Модуль для работы с аккаунтом.
     /// </summary>
-    public interface IAccount : IEnvironment
+    public interface IAccount : IEnvironmentProvider
     {
         /// <summary>
         /// Возвращает информацию о текущем аккаунте.

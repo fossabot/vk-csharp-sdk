@@ -3,5 +3,5 @@
     /// <summary>
     /// Модуль для работы с личными сообщениями.
     /// </summary>
-    public interface IMessages : IEnvironment { }
+    public interface IMessages : IEnvironmentProvider { }
 }

@@ -1,9 +1,11 @@
-﻿namespace Vk.CSharp.Sdk.Global.Models
+﻿using System;
+
+namespace Vk.CSharp.Sdk.Global.Models
 {
     /// <summary>
     /// Окружение.
     /// </summary>
-    public class Environment
+    public class Environment : ICloneable
     {
         /// <summary>
         /// Версия.
@@ -14,5 +16,14 @@
         /// Ключ доступа.
         /// </summary>
         public string AccessToken { get; set; } = string.Empty;
+
+        public object Clone()
+        {
+            return new Environment
+            {
+                Version = Version,
+                AccessToken = AccessToken
+            };
+        }
     }
 }

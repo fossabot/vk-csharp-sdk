@@ -41,6 +41,19 @@ namespace Vk.CSharp.Sdk.App.Source
 
             Console.WriteLine(account.GetEnvironment().AccessToken);
 
+            var environment = VkApiProvider
+                .GetEnvironmentProvider()
+                .GetEnvironment();
+
+            environment.AccessToken = "new_access_token";
+
+            Console.WriteLine(
+                VkApiProvider
+                    .GetEnvironmentProvider()
+                    .GetEnvironment()
+                    .AccessToken
+            );
+
             Console.ReadKey();
         }
     }

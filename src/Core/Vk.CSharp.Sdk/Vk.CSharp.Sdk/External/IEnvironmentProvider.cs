@@ -2,7 +2,10 @@
 
 namespace Vk.CSharp.Sdk.External
 {
-    public interface IEnvironment
+    /// <summary>
+    /// Интерфейс провадйерп окружения.
+    /// </summary>
+    public interface IEnvironmentProvider
     {
         /// <summary>
         /// Возвращает окружение.

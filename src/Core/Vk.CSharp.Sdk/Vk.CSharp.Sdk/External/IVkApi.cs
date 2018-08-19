@@ -6,7 +6,7 @@ namespace Vk.CSharp.Sdk.External
     /// <summary>
     /// API ВКонтакте.
     /// </summary>
-    public interface IVkApi : IEnvironment
+    public interface IVkApi : IEnvironmentProvider
     {
         /// <summary>
         /// Возвращает интерфейс для работы с аккаунтом.
